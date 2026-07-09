@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   template: `
     <span class="created-by">
       Aurora Bank Digital Banking Console
-      <aui-status-badge tone="success">Angular 14</aui-status-badge>
+      <aui-status-badge tone="success">Angular 15</aui-status-badge>
     </span>
     <div class="socials">
       <a href="#" target="_blank" class="ion ion-social-github"></a>
