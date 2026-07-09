@@ -14,6 +14,7 @@ import {
   NbThemeModule,
 } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
+import { EditorModule } from '@tinymce/tinymce-angular';
 import { NbSecurityModule } from '@nebular/security';
 
 import {
@@ -74,7 +75,7 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES, DesignSystemModule, SharedUiModule],
+  imports: [CommonModule, EditorModule, ...NB_MODULES, DesignSystemModule, SharedUiModule],
   exports: [CommonModule, ...PIPES, ...COMPONENTS, DesignSystemModule, SharedUiModule],
   declarations: [...COMPONENTS, ...PIPES],
 })

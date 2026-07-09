@@ -6,6 +6,15 @@
 
 @use '@angular/material' as mat;
 
+// TODO(v15): As of v15 mat.legacy-core no longer includes default typography styles.
+//  The following line adds:
+//    1. Default typography styles for all components
+//    2. Styles for typography hierarchy classes (e.g. .mat-headline-1)
+//  If you specify typography styles for the components you use elsewhere, you should delete this line.
+//  If you don't need the default component typographies but still want the hierarchy styles,
+//  you can delete this line and instead use:
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+@include mat.all-component-typographies();
 @include mat.core();
 
 $aurora-primary-palette: (
@@ -41,17 +50,17 @@ $aurora-primary-palette: (
   ),
 );
 
-$aurora-primary: mat.define-palette($aurora-primary-palette, 500);
-$aurora-accent: mat.define-palette(mat.$teal-palette, 400);
-$aurora-warn: mat.define-palette(mat.$red-palette, 600);
+$aurora-primary: mat.m2-define-palette($aurora-primary-palette, 500);
+$aurora-accent: mat.m2-define-palette(mat.$m2-teal-palette, 400);
+$aurora-warn: mat.m2-define-palette(mat.$m2-red-palette, 600);
 
-$aurora-theme: mat.define-light-theme((
+$aurora-theme: mat.m2-define-light-theme((
   color: (
     primary: $aurora-primary,
     accent: $aurora-accent,
     warn: $aurora-warn,
   ),
-  typography: mat.define-typography-config(),
+  typography: mat.m2-define-typography-config(),
   density: 0,
 ));
 

@@ -1,5 +1,6 @@
 import { Component, Input, OnChanges, OnDestroy, SimpleChanges } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import * as echarts from 'echarts';
 import { takeWhile } from 'rxjs/operators';
 import { LayoutService } from '../../../../@core/utils/layout.service';
 
@@ -41,7 +42,7 @@ export class CountryOrdersChartComponent implements OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.data && !changes.data.isFirstChange()) {
+    if (changes.data && !changes.data.isFirstChange() && this.echartsInstance) {
       this.echartsInstance.setOption({
         series: [
           {

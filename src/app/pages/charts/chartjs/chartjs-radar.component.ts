@@ -4,7 +4,7 @@ import { NbThemeService, NbColorHelper } from '@nebular/theme';
 @Component({
   selector: 'ngx-chartjs-radar',
   template: `
-    <chart type="radar" [data]="data" [options]="options"></chart>
+    <canvas baseChart type="radar" [data]="data" [options]="options"></canvas>
   `,
 })
 export class ChartjsRadarComponent implements OnDestroy {
@@ -36,22 +36,27 @@ export class ChartjsRadarComponent implements OnDestroy {
       this.options = {
         responsive: true,
         maintainAspectRatio: false,
-        scaleFontColor: 'white',
-        legend: {
-          labels: {
-            fontColor: chartjs.textColor,
+        plugins: {
+          legend: {
+            labels: {
+              color: chartjs.textColor,
+            },
           },
         },
-        scale: {
-          pointLabels: {
-            fontSize: 14,
-            fontColor: chartjs.textColor,
-          },
-          gridLines: {
-            color: chartjs.axisLineColor,
-          },
-          angleLines: {
-            color: chartjs.axisLineColor,
+        scales: {
+          r: {
+            pointLabels: {
+              font: {
+                size: 14,
+              },
+              color: chartjs.textColor,
+            },
+            grid: {
+              color: chartjs.axisLineColor,
+            },
+            angleLines: {
+              color: chartjs.axisLineColor,
+            },
           },
         },
       };
