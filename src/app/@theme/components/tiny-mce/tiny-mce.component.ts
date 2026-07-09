@@ -1,3 +1,5 @@
+import 'tinymce/tinymce';
+
 import { Component, Output, EventEmitter } from '@angular/core';
 
 @Component({
@@ -11,7 +13,7 @@ export class TinyMCEComponent {
   @Output() editorKeyup = new EventEmitter<any>();
 
   init = {
-    base_url: 'assets/tinymce',
+    base_url: '/assets/tinymce',
     suffix: '.min',
     plugins: ['link', 'table'],
     promotion: false,

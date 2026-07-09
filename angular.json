@@ -50,6 +50,7 @@
             "allowedCommonJsDependencies": [
               "echarts",
               "lodash",
+              "tinymce",
               "zrender/lib/svg/svg",
               "zrender/lib/vml/vml"
             ],
