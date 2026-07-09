@@ -4,7 +4,7 @@ import { NbThemeService } from '@nebular/theme';
 @Component({
   selector: 'ngx-chartjs-pie',
   template: `
-    <chart type="pie" [data]="data" [options]="options"></chart>
+    <canvas baseChart type="pie" [data]="data" [options]="options"></canvas>
   `,
 })
 export class ChartjsPieComponent implements OnDestroy {
@@ -29,21 +29,11 @@ export class ChartjsPieComponent implements OnDestroy {
       this.options = {
         maintainAspectRatio: false,
         responsive: true,
-        scales: {
-          xAxes: [
-            {
-              display: false,
+        plugins: {
+          legend: {
+            labels: {
+              color: chartjs.textColor,
             },
-          ],
-          yAxes: [
-            {
-              display: false,
-            },
-          ],
-        },
-        legend: {
-          labels: {
-            fontColor: chartjs.textColor,
           },
         },
       };
