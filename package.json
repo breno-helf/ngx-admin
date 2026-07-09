@@ -62,7 +62,7 @@
     "lodash-es": "^4.17.21",
     "nebular-icons": "1.1.0",
     "ng2-charts": "^4.1.1",
-    "ngx-echarts": "^15.0.3",
+    "ngx-echarts": "^18.0.0",
     "normalize.css": "6.0.0",
     "pace-js": "1.0.2",
     "roboto-fontface": "0.8.0",
