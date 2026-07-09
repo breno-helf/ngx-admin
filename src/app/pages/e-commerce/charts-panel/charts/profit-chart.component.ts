@@ -1,5 +1,6 @@
 import { AfterViewInit, Component, Input, OnChanges, OnDestroy } from '@angular/core';
 import { NbThemeService } from '@nebular/theme';
+import * as echarts from 'echarts';
 import { takeWhile } from 'rxjs/operators';
 
 import { ProfitChart } from '../../../../@core/data/profit-chart';
