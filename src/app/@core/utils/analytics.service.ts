@@ -1,7 +1,9 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { NavigationEnd, Router } from '@angular/router';
 import { Location } from '@angular/common';
 import { filter } from 'rxjs/operators';
+
+import { AuroraAnalyticsService } from '../analytics-sdk/aurora-analytics.service';
 
 declare const ga: any;
 
@@ -9,22 +11,29 @@ declare const ga: any;
 export class AnalyticsService {
   private enabled: boolean;
 
-  constructor(private location: Location, private router: Router) {
+  constructor(
+    private location: Location,
+    private router: Router,
+    @Optional() private aurora: AuroraAnalyticsService | null,
+  ) {
     this.enabled = false;
   }
 
   trackPageViews() {
-    if (this.enabled) {
-      this.router.events.pipe(
-        filter((event) => event instanceof NavigationEnd),
-      )
-        .subscribe(() => {
-          ga('send', {hitType: 'pageview', page: this.location.path()});
-        });
-    }
+    this.router.events.pipe(
+      filter((event) => event instanceof NavigationEnd),
+    )
+      .subscribe(() => {
+        const path = this.location.path();
+        this.aurora?.page(path);
+        if (this.enabled) {
+          ga('send', {hitType: 'pageview', page: path});
+        }
+      });
   }
 
   trackEvent(eventName: string) {
+    this.aurora?.track(eventName);
     if (this.enabled) {
       ga('send', 'event', eventName);
     }

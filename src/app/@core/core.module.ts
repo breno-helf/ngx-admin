@@ -7,6 +7,7 @@ import { of as observableOf } from 'rxjs';
 import { throwIfAlreadyLoaded } from './module-import-guard';
 import { MockOidcAuthStrategy } from './auth/mock-oidc-auth.strategy';
 import { MockOidcIdentityProviderService } from './auth/mock-oidc-identity-provider.service';
+import { FINANCIAL_DATA_PROVIDERS } from './data-providers';
 import {
   AnalyticsService,
   LayoutService,
@@ -141,6 +142,7 @@ export const NB_CORE_PROVIDERS = [
   },
   MockOidcIdentityProviderService,
   MockOidcAuthStrategy,
+  ...FINANCIAL_DATA_PROVIDERS,
   AnalyticsService,
   LayoutService,
   PlayerService,
