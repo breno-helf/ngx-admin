@@ -13,9 +13,9 @@
 //  If you specify typography styles for the components you use elsewhere, you should delete this line.
 //  If you don't need the default component typographies but still want the hierarchy styles,
 //  you can delete this line and instead use:
-//    `@include mat.legacy-typography-hierarchy(mat.define-legacy-typography-config());`
-@include mat.all-legacy-component-typographies();
-@include mat.legacy-core();
+//    `@include mat.legacy-typography-hierarchy(mat.define-typography-config());`
+@include mat.all-component-typographies();
+@include mat.core();
 
 $aurora-primary-palette: (
   50: #e8eefb,
@@ -60,8 +60,8 @@ $aurora-theme: mat.define-light-theme((
     accent: $aurora-accent,
     warn: $aurora-warn,
   ),
-  typography: mat.define-legacy-typography-config(),
+  typography: mat.define-typography-config(),
   density: 0,
 ));
 
-@include mat.all-legacy-component-themes($aurora-theme);
+@include mat.all-component-themes($aurora-theme);
