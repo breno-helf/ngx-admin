@@ -29,7 +29,7 @@
         "@angular-eslint/component-selector": [
           "error",
           {
-            "prefix": "ngx",
+            "prefix": ["ngx", "ds"],
             "style": "kebab-case",
             "type": "element"
           }

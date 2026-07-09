@@ -1,0 +1,24 @@
+<button
+  *ngIf="appearance === 'filled'; else outlined"
+  mat-raised-button
+  [color]="color"
+  [type]="type"
+  [disabled]="disabled"
+  (click)="onClick($event)"
+>
+  <ng-container *ngTemplateOutlet="content"></ng-container>
+</button>
+
+<ng-template #outlined>
+  <button
+    mat-stroked-button
+    [color]="color"
+    [type]="type"
+    [disabled]="disabled"
+    (click)="onClick($event)"
+  >
+    <ng-container *ngTemplateOutlet="content"></ng-container>
+  </button>
+</ng-template>
+
+<ng-template #content><ng-content></ng-content></ng-template>
