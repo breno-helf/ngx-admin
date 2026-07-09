@@ -3,7 +3,7 @@ import { NbThemeService } from '@nebular/theme';
 import { takeWhile } from 'rxjs/operators';
 import { LayoutService } from '../../../../@core/utils/layout.service';
 
-declare const echarts: any;
+import * as echarts from 'echarts';
 
 @Component({
   selector: 'ngx-traffic-bar-chart',
