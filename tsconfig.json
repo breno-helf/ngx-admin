@@ -8,7 +8,13 @@
     "declaration": false,
     "moduleResolution": "node",
     "experimentalDecorators": true,
-    "target": "ES2022",
+    "target": "es2020",
+    "baseUrl": "./",
+    "paths": {
+      "shared-ui": [
+        "projects/shared-ui/src/public-api"
+      ]
+    },
     "typeRoots": [
       "node_modules/@types"
     ],
@@ -17,10 +23,7 @@
       "dom"
     ],
     "plugins": [
-      {
-        "name": "tslint-language-service"
-      }
-    ],
-    "useDefineForClassFields": false
+      { "name": "tslint-language-service"}
+    ]
   }
 }

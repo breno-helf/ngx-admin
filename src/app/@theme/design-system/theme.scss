@@ -1,0 +1,58 @@
+// Aurora design-system theme, layered on top of Angular Material.
+//
+// Defines the bank's brand palettes via Material's theming API. Product code
+// consumes the resulting look through the `ds-*` wrapper components, so a
+// Material upgrade only has to keep this file and the wrappers compiling.
+
+@use '@angular/material' as mat;
+
+@include mat.core();
+
+$aurora-primary-palette: (
+  50: #e8eefb,
+  100: #c5d4f5,
+  200: #9fb8ee,
+  300: #789ce7,
+  400: #5b87e2,
+  500: #3e72dd,
+  600: #386ad9,
+  700: #305fd4,
+  800: #2855cf,
+  900: #1b42c7,
+  A100: #ffffff,
+  A200: #d3ddff,
+  A400: #a0b4ff,
+  A700: #86a1ff,
+  contrast: (
+    50: rgba(black, 0.87),
+    100: rgba(black, 0.87),
+    200: rgba(black, 0.87),
+    300: white,
+    400: white,
+    500: white,
+    600: white,
+    700: white,
+    800: white,
+    900: white,
+    A100: rgba(black, 0.87),
+    A200: rgba(black, 0.87),
+    A400: white,
+    A700: white,
+  ),
+);
+
+$aurora-primary: mat.define-palette($aurora-primary-palette, 500);
+$aurora-accent: mat.define-palette(mat.$teal-palette, 400);
+$aurora-warn: mat.define-palette(mat.$red-palette, 600);
+
+$aurora-theme: mat.define-light-theme((
+  color: (
+    primary: $aurora-primary,
+    accent: $aurora-accent,
+    warn: $aurora-warn,
+  ),
+  typography: mat.define-typography-config(),
+  density: 0,
+));
+
+@include mat.all-component-themes($aurora-theme);
