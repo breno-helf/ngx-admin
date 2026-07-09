@@ -9,6 +9,12 @@
     "moduleResolution": "node",
     "experimentalDecorators": true,
     "target": "es2020",
+    "baseUrl": "./",
+    "paths": {
+      "shared-ui": [
+        "projects/shared-ui/src/public-api"
+      ]
+    },
     "typeRoots": [
       "node_modules/@types"
     ],

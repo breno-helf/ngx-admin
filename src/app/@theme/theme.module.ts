@@ -34,6 +34,8 @@ import {
   ThreeColumnsLayoutComponent,
   TwoColumnsLayoutComponent,
 } from './layouts';
+import { SharedUiModule } from 'shared-ui';
+
 import { DesignSystemModule } from './design-system';
 import { DEFAULT_THEME } from './styles/theme.default';
 import { COSMIC_THEME } from './styles/theme.cosmic';
@@ -72,8 +74,8 @@ const PIPES = [
 ];
 
 @NgModule({
-  imports: [CommonModule, ...NB_MODULES, DesignSystemModule],
-  exports: [CommonModule, ...PIPES, ...COMPONENTS, DesignSystemModule],
+  imports: [CommonModule, ...NB_MODULES, DesignSystemModule, SharedUiModule],
+  exports: [CommonModule, ...PIPES, ...COMPONENTS, DesignSystemModule, SharedUiModule],
   declarations: [...COMPONENTS, ...PIPES],
 })
 export class ThemeModule {
