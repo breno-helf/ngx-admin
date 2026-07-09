@@ -4,7 +4,7 @@ import { NbThemeService } from '@nebular/theme';
 @Component({
   selector: 'ngx-chartjs-bar-horizontal',
   template: `
-    <chart type="horizontalBar" [data]="data" [options]="options"></chart>
+    <canvas baseChart type="bar" [data]="data" [options]="options"></canvas>
   `,
 })
 export class ChartjsBarHorizontalComponent implements OnDestroy {
@@ -36,39 +36,38 @@ export class ChartjsBarHorizontalComponent implements OnDestroy {
       this.options = {
         responsive: true,
         maintainAspectRatio: false,
+        indexAxis: 'y',
         elements: {
-          rectangle: {
+          bar: {
             borderWidth: 2,
           },
         },
         scales: {
-          xAxes: [
-            {
-              gridLines: {
-                display: true,
-                color: chartjs.axisLineColor,
-              },
-              ticks: {
-                fontColor: chartjs.textColor,
-              },
+          x: {
+            grid: {
+              display: true,
+              color: chartjs.axisLineColor,
             },
-          ],
-          yAxes: [
-            {
-              gridLines: {
-                display: false,
-                color: chartjs.axisLineColor,
-              },
-              ticks: {
-                fontColor: chartjs.textColor,
-              },
+            ticks: {
+              color: chartjs.textColor,
             },
-          ],
+          },
+          y: {
+            grid: {
+              display: false,
+              color: chartjs.axisLineColor,
+            },
+            ticks: {
+              color: chartjs.textColor,
+            },
+          },
         },
-        legend: {
-          position: 'right',
-          labels: {
-            fontColor: chartjs.textColor,
+        plugins: {
+          legend: {
+            position: 'right',
+            labels: {
+              color: chartjs.textColor,
+            },
           },
         },
       };
