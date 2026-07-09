@@ -49,9 +49,17 @@
     "@nebular/eva-icons": "11.0.1",
     "@nebular/security": "11.0.1",
     "@nebular/theme": "11.0.1",
+<<<<<<< HEAD
     "@swimlane/ngx-charts": "^14.0.0",
     "angular2-multiselect-dropdown": "^5.0.4",
     "angular2-smart-table": "^2.10.1",
+||||||| c55da88
+    "@swimlane/ngx-charts": "^14.0.0",
+    "angular2-chartjs": "0.4.1",
+=======
+    "@swimlane/ngx-charts": "^20.5.0",
+    "angular2-chartjs": "0.4.1",
+>>>>>>> origin/upgrade/ng15-worker-ngx-charts
     "bootstrap": "4.3.1",
     "chart.js": "^4.4.1",
     "classlist.js": "1.1.20150312",
