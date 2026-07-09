@@ -1,10 +1,12 @@
 import { ModuleWithProviders, NgModule, Optional, SkipSelf } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { NbAuthModule, NbDummyAuthStrategy } from '@nebular/auth';
+import { NbAuthModule } from '@nebular/auth';
 import { NbSecurityModule, NbRoleProvider } from '@nebular/security';
 import { of as observableOf } from 'rxjs';
 
 import { throwIfAlreadyLoaded } from './module-import-guard';
+import { MockOidcAuthStrategy } from './auth/mock-oidc-auth.strategy';
+import { MockOidcIdentityProviderService } from './auth/mock-oidc-identity-provider.service';
 import {
   AnalyticsService,
   LayoutService,
@@ -106,9 +108,8 @@ export const NB_CORE_PROVIDERS = [
   ...NbAuthModule.forRoot({
 
     strategies: [
-      NbDummyAuthStrategy.setup({
+      MockOidcAuthStrategy.setup({
         name: 'email',
-        delay: 3000,
       }),
     ],
     forms: {
@@ -138,6 +139,8 @@ export const NB_CORE_PROVIDERS = [
   {
     provide: NbRoleProvider, useClass: NbSimpleRoleProvider,
   },
+  MockOidcIdentityProviderService,
+  MockOidcAuthStrategy,
   AnalyticsService,
   LayoutService,
   PlayerService,
