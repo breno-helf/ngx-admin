@@ -10,4 +10,4 @@ interface NodeModule {
   id: string;
 }
 
-declare var echarts: any;
+
