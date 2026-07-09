@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IColumnType, LocalDataSource, Settings } from 'angular2-smart-table';
+import { LocalDataSource, Settings } from 'angular2-smart-table';
 
 import { SmartTableData } from '../../../@core/data/smart-table';
 
@@ -28,27 +28,27 @@ export class SmartTableComponent {
     columns: {
       id: {
         title: 'ID',
-        type: IColumnType.Text,
+        type: 'text',
       },
       firstName: {
         title: 'First Name',
-        type: IColumnType.Text,
+        type: 'text',
       },
       lastName: {
         title: 'Last Name',
-        type: IColumnType.Text,
+        type: 'text',
       },
       username: {
         title: 'Username',
-        type: IColumnType.Text,
+        type: 'text',
       },
       email: {
         title: 'E-mail',
-        type: IColumnType.Text,
+        type: 'text',
       },
       age: {
         title: 'Age',
-        type: IColumnType.Text,
+        type: 'text',
       },
     },
   };
