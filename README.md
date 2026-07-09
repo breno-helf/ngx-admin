@@ -14,7 +14,7 @@ We are not actively reviewing or merging pull requests, responding to or resolvi
 
 ## Installation notes
 
-To install ngx-admin you have to use NodeJS version 14.14+ because of [node-sass](https://github.com/sass/node-sass) version utilized in the application.
+To install ngx-admin use NodeJS version 18.x LTS. Stylesheets are compiled with [Dart Sass](https://sass-lang.com/dart-sass) (the deprecated node-sass dependency has been removed).
 
 ## Key features
 
