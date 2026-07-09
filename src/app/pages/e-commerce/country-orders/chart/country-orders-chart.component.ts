@@ -41,7 +41,7 @@ export class CountryOrdersChartComponent implements OnDestroy, OnChanges {
   }
 
   ngOnChanges(changes: SimpleChanges): void {
-    if (changes.data && !changes.data.isFirstChange() && this.echartsInstance) {
+    if (changes.data && !changes.data.isFirstChange()) {
       this.echartsInstance.setOption({
         series: [
           {
