@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { LocalDataSource } from 'ng2-smart-table';
+import { IColumnType, LocalDataSource, Settings } from 'angular2-smart-table';
 
 import { SmartTableData } from '../../../@core/data/smart-table';
 
@@ -10,7 +10,7 @@ import { SmartTableData } from '../../../@core/data/smart-table';
 })
 export class SmartTableComponent {
 
-  settings = {
+  settings: Settings = {
     add: {
       addButtonContent: '<i class="nb-plus"></i>',
       createButtonContent: '<i class="nb-checkmark"></i>',
@@ -28,27 +28,27 @@ export class SmartTableComponent {
     columns: {
       id: {
         title: 'ID',
-        type: 'number',
+        type: IColumnType.Text,
       },
       firstName: {
         title: 'First Name',
-        type: 'string',
+        type: IColumnType.Text,
       },
       lastName: {
         title: 'Last Name',
-        type: 'string',
+        type: IColumnType.Text,
       },
       username: {
         title: 'Username',
-        type: 'string',
+        type: IColumnType.Text,
       },
       email: {
         title: 'E-mail',
-        type: 'string',
+        type: IColumnType.Text,
       },
       age: {
         title: 'Age',
-        type: 'number',
+        type: IColumnType.Text,
       },
     },
   };
