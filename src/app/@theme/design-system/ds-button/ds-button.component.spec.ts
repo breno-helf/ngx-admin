@@ -46,6 +46,6 @@ describe('DsButtonComponent', () => {
   it('renders a filled button by default', () => {
     const button: HTMLButtonElement = fixture.nativeElement.querySelector('button');
     expect(button).toBeTruthy();
-    expect(button.classList).toContain('mat-raised-button');
+    expect(button.classList).toContain('mat-mdc-raised-button');
   });
 });
